@@ -1,18 +1,16 @@
 package Bit_Manipulation;
-
 public class setbits {
-    public static void sb(int number){
-         int bitMask = 1;
-         if((number & bitMask) == 0){
-            System.out.println("even");
-         }
-         else{
-            System.out.println("odd");
-         }
+    public static int sb(int number){
+        int c = 0;
+        while(number>0){
+          if ((number & 1)!=0 ){
+           c++;
+          }
+          number = number>>1;
+        }
+        return c;
     }
     public static void main(String args[]){
-         oddeven(10);
-         oddeven(5);
-
+        System.out.println(sb(32));
     }
 }
